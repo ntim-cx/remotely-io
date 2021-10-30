@@ -1,7 +1,12 @@
 # remotely_io
 
-E-commerce app concept purposely for the remote working. UI by Georgina Sekyi
+E-commerce app concept purposely for the remote working. UI by [Georgina Sekyi](https://linkedin.com/in/georgina-sekyi)
 
+Find her on [Instagram](https://instagram.com/designbygeena)  & [Dribble](https://dribbble.com/designbygeena)
+
+Resources:
+UI Design - [Figma](https://www.figma.com/file/kSGaIbjEhTluduKTEcmuVL/Remotely-Store-UI-(Community)?node-id=3221%3A1773)
+Font used [Avenir](https://en.wikipedia.org/wiki/Avenir_(typeface))
 ## Getting Started
 
 This project is a starting point for a Flutter application.
