@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:remotely_io/component_widgets/bookmark_icon.widget.dart';
 import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/colors.dart';
-import 'package:remotely_io/constants/images.dart';
 
 class ProductItem extends StatelessWidget {
   final String title;
@@ -23,11 +23,7 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bookmarkImage = Container(
-      padding: EdgeInsets.all(9.0),
-      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-      child: SvgPicture.asset(AppImages.ic_bookmark_heart),
-    );
+
 
     final featureProductImage = Container(
       width: 105,
@@ -39,7 +35,7 @@ class ProductItem extends StatelessWidget {
             width: 60,
             height: 60,
           ),
-          bookmarkImage,
+          BookmarkIcon(onTap: (){}),
         ],
       ),
       decoration: BoxDecoration(
