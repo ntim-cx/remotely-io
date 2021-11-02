@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:remotely_io/component_widgets/custom_outlined_button.widget.dart';
 import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/colors.dart';
 
@@ -66,6 +67,11 @@ class OrderItem extends StatelessWidget {
               productDetails
             ],
           ),
+          Utils.verticalSpacer(space: 8),
+          CustomOutlinedButton(
+            onPressed: () {},
+            text: "View Item",
+          )
         ],
       ),
       padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 12),
