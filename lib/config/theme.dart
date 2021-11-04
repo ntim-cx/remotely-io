@@ -4,7 +4,7 @@ import 'package:remotely_io/constants/constants.dart';
 
 ThemeData primaryTheme = ThemeData(
     primaryColor: AppColors.colorPrimary,
-    colorScheme: ColorScheme.fromSwatch(primarySwatch: AppColors.colorPrimary)
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green)
         .copyWith(secondary: AppColors.colorSecondary),
     fontFamily: AppConstants.primaryFont,
     textTheme: primaryTextTheme);

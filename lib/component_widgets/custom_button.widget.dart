@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton(
       {Key key,
       this.isLoading,
-      this.isSmall,
+      this.isSmall = false,
       this.icon,
       this.width,
       this.onPressed,
@@ -35,6 +35,7 @@ class CustomButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: this.onPressed,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               text,

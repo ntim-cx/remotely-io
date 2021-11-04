@@ -51,7 +51,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/images/svg
+    - assets/images/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -67,8 +67,14 @@ flutter:
   fonts:
     - family: Avenir
       fonts:
-        - asset: assets/fonts/Avenir-Roman.otf
+        - asset: assets/fonts/Avenir-Regular.otf
         - asset: assets/fonts/Avenir-Bold.otf
+
+    - family: Oxygen
+      fonts:
+        - asset: assets/fonts/Oxygen-Regular.ttf
+        - asset: assets/fonts/Oxygen-Light.ttf
+        - asset: assets/fonts/Oxygen-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,
