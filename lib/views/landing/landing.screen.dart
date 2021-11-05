@@ -4,6 +4,7 @@ import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/app_text.dart';
 import 'package:remotely_io/constants/colors.dart';
 import 'package:remotely_io/constants/images.dart';
+import 'package:remotely_io/constants/routes.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key key}) : super(key: key);
@@ -55,10 +56,14 @@ class LandingScreen extends StatelessWidget {
                 Utils.verticalSpacer(),
                 Align(
                   alignment: Alignment.center,
-                  child: Text(
-                    AppString.login,
-                    style: Theme.of(context).textTheme.subtitle1.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w800),
+                  child: TextButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, AppRoutes.loginRoute),
+                    child: Text(
+                      AppString.login,
+                      style: Theme.of(context).textTheme.subtitle1.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w800),
+                    ),
                   ),
                 )
               ],

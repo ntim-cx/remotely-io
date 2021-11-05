@@ -39,7 +39,7 @@ class CustomButton extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(color: textColor),
+              style: TextStyle(color: textColor, fontWeight: FontWeight.w500),
             ),
             Utils.horizontalSpacer(),
             icon == null

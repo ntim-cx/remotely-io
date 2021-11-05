@@ -9,4 +9,13 @@ ThemeData primaryTheme = ThemeData(
     fontFamily: AppConstants.primaryFont,
     textTheme: primaryTextTheme);
 
-TextTheme primaryTextTheme = TextTheme().copyWith();
+TextTheme primaryTextTheme = TextTheme().copyWith(
+  subtitle1: TextStyle().copyWith(
+    color: Colors.black,
+    fontSize: 16
+  ),
+  subtitle2: TextStyle(
+    color: AppColors.colorGreyDeeper,
+    fontSize: 14
+  )
+);
