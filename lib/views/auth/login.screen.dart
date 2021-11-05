@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remotely_io/component_widgets/custom_button.widget.dart';
+import 'package:remotely_io/component_widgets/custom_outlined_button.widget.dart';
 import 'package:remotely_io/component_widgets/custom_text_field.dart';
 import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/app_text.dart';
@@ -11,14 +12,12 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final facebookButton = customAuthButton(
+    final facebookButton = CustomOutlinedButton(
         text: AppString.facebookLogin,
-        context: context,
         icon: AppImages.ic_facebook_logo);
 
-    final googleButton = customAuthButton(
+    final googleButton = CustomOutlinedButton(
         text: AppString.googleLogin,
-        context: context,
         icon: AppImages.ic_google_logo);
 
     return Scaffold(
@@ -114,32 +113,4 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-Widget customAuthButton(
-    {String text, Function onPressed, BuildContext context, String icon}) {
-  return MaterialButton(
-    onPressed: onPressed,
-    color: Colors.transparent,
-    child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      height: 60,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            icon,
-            width: 28,
-            height: 28,
-          ),
-          Utils.horizontalSpacer(space: 20),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-        ],
-      ),
-    ),
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: BorderSide(color: AppColors.colorGreyDeep, width: 1.0)),
-  );
-}
+
