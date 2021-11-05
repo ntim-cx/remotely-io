@@ -19,4 +19,9 @@ class AppString {
   static const forgotPassword = "Forgot password?";
   static const signUp = "Sign Up";
   static const loginText ="Login";
+
+  //Sign Up Text
+  static const welcomeTo = "Welcome to ";
+  static const alreadyHaveAccount ="Already have an account?";
+  static const phoneNumber ="Phone number";
 }

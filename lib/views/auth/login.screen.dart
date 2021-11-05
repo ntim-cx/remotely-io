@@ -6,6 +6,7 @@ import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/app_text.dart';
 import 'package:remotely_io/constants/colors.dart';
 import 'package:remotely_io/constants/images.dart';
+import 'package:remotely_io/constants/routes.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key key}) : super(key: key);
@@ -31,7 +32,6 @@ class LoginScreen extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Utils.verticalSpacer(space: 45),
                   Text(
                     AppString.userWelcome,
                     style: Theme.of(context).textTheme.subtitle2.copyWith(
@@ -96,12 +96,15 @@ class LoginScreen extends StatelessWidget {
                         .subtitle1
                         .copyWith(color: AppColors.colorGreyDeeper),
                   ),
-                  Text(
-                    AppString.signUp,
-                    style: Theme.of(context)
-                        .textTheme
-                        .subtitle1
-                        .copyWith(color: AppColors.colorSecondary, fontWeight: FontWeight.w600),
+                  TextButton(
+                    onPressed: ()=>Navigator.popAndPushNamed(context, AppRoutes.signupRoute),
+                    child: Text(
+                      AppString.signUp,
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle1
+                          .copyWith(color: AppColors.colorSecondary, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ],
               )
