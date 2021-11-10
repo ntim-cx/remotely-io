@@ -27,7 +27,7 @@ class CategoryItem extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           color: AppColors.colorWhiteShade),
-      child: SvgPicture.asset(
+      child: Image.asset(
         featureImage,
         fit: BoxFit.cover,
       ),

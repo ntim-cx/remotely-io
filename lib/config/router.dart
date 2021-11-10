@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:remotely_io/constants/routes.dart';
 import 'package:remotely_io/views/auth/login.screen.dart';
 import 'package:remotely_io/views/auth/signup.screen.dart';
+import 'package:remotely_io/views/browse/browse.screen.dart';
 import 'package:remotely_io/views/landing/landing.screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -12,6 +13,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => LoginScreen());
     case AppRoutes.signupRoute:
       return MaterialPageRoute(builder: (context) => SignUpScreen());
+    case AppRoutes.browseRoute:
+      return MaterialPageRoute(builder: (context) => BrowseScreen());
     default:
       return MaterialPageRoute(builder: (context) => LandingScreen());
   }

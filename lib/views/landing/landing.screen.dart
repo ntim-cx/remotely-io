@@ -50,7 +50,7 @@ class LandingScreen extends StatelessWidget {
                 ),
                 Utils.verticalSpacer(),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamedAndRemoveUntil(context, AppRoutes.browseRoute, (route) => false),
                   text: AppString.browseShop,
                 ),
                 Utils.verticalSpacer(),

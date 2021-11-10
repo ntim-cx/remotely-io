@@ -16,7 +16,7 @@ class HeaderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final header = Text(
       title,
-      style: Theme.of(context).textTheme.headline6,
+      style: Theme.of(context).textTheme.subtitle1,
     );
 
     return isVertical
@@ -37,7 +37,7 @@ class HeaderItem extends StatelessWidget {
               header,
               Row(
                 children: [
-                  Text("See more"),
+                  Text("See more",style: Theme.of(context).textTheme.caption.copyWith(fontWeight: FontWeight.w500,color: AppColors.colorGreyDeeper),),
                   Utils.horizontalSpacer(space: 8),
                   SvgPicture.asset(AppImages.ic_right_arrow,
                       color: AppColors.colorGreyDeeper)
