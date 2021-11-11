@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:remotely_io/config/utils.dart';
 import 'package:remotely_io/constants/colors.dart';
 
@@ -16,7 +15,7 @@ class CategoryItem extends StatelessWidget {
       @required this.featureImage,
       @required this.title,
       this.onTap,
-      this.subTitle})
+      @required this.subTitle})
       : super(key: key);
 
   @override
@@ -39,34 +38,42 @@ class CategoryItem extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.subtitle1,
         ),
-        Utils.verticalSpacer(),
+        Utils.verticalSpacer(space: 8),
         Text(
-          title,
-          style: Theme.of(context).textTheme.subtitle2,
+          subTitle,
+          style: Theme.of(context).textTheme.caption,
         )
       ],
     );
 
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      child: isVertical
-          ? Column(
-              children: [
-                previewImage,
-                Utils.verticalSpacer(),
-                categoryDescription
-              ],
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                previewImage,
-                Utils.horizontalSpacer(),
-                categoryDescription
-              ],
-            ),
+    return Wrap(
+      children: [
+        Container(
+          padding: EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: AppColors.colorWhiteShade),
+          child: isVertical
+              ? Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    previewImage,
+                    Utils.verticalSpacer(),
+                    categoryDescription
+                  ],
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    previewImage,
+                    Utils.horizontalSpacer(),
+                    categoryDescription
+                  ],
+                ),
+        ),
+      ],
     );
   }
 }

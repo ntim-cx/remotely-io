@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:remotely_io/component_widgets/bookmark_icon.widget.dart';
 import 'package:remotely_io/config/utils.dart';
+import 'package:remotely_io/constants/app_text.dart';
 import 'package:remotely_io/constants/colors.dart';
 
 class ProductItem extends StatelessWidget {
@@ -23,19 +23,23 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     final featureProductImage = Container(
       width: 105,
       height: 86,
       child: Stack(
         children: [
-          SvgPicture.asset(
-            featureImage,
-            width: 60,
-            height: 60,
+          Center(
+            child: Image.asset(
+              featureImage,
+              width: 60,
+              height: 60,
+            ),
           ),
-          BookmarkIcon(onTap: (){}),
+          Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                  child: BookmarkIcon(onTap: () {}))),
         ],
       ),
       decoration: BoxDecoration(
@@ -50,14 +54,26 @@ class ProductItem extends StatelessWidget {
         Text.rich(
           TextSpan(
             text: "$category",
-            children: [TextSpan(text: "$rating")],
+            children: [
+              TextSpan(
+                  text: " ${AppString.dot} $rating",
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption
+                      .copyWith(color: AppColors.colorGreyDeeper))
+            ],
           ),
+          style: Theme.of(context)
+              .textTheme
+              .caption
+              .copyWith(color: AppColors.colorGreyDeep),
         ),
         RatingBar.builder(
           initialRating: 1,
           minRating: 1,
           direction: Axis.horizontal,
           itemCount: 1,
+          itemSize: 12,
           itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
           itemBuilder: (context, _) => Icon(
             Icons.star,
@@ -70,16 +86,20 @@ class ProductItem extends StatelessWidget {
     );
 
     final productDescription = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text(title),
-        Utils.verticalSpacer(),
+        Text(
+          title,
+        ),
+        Utils.verticalSpacer(space: 4),
         productSubtitle,
-        Utils.verticalSpacer(),
+        Utils.verticalSpacer(space: 8),
         Text(
           "\$$price",
           style: Theme.of(context)
               .textTheme
-              .headline6
+              .subtitle1
               .copyWith(color: AppColors.colorSecondary),
         )
       ],
@@ -88,7 +108,9 @@ class ProductItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(8.0)),
+          color: Colors.white, borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(color: AppColors.colorGreyDeep)
+      ),
       child: Row(
         children: [
           featureProductImage,
