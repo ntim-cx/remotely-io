@@ -7,9 +7,10 @@ import 'package:remotely_io/constants/images.dart';
 class HeaderItem extends StatelessWidget {
   final bool isVertical;
   final String title;
+  final String moreText;
   final String subHeader;
 
-  const HeaderItem({Key key, this.isVertical, this.title, this.subHeader})
+  const HeaderItem({Key key, this.isVertical, this.title, this.subHeader, this.moreText ="See more"})
       : super(key: key);
 
   @override
@@ -37,7 +38,12 @@ class HeaderItem extends StatelessWidget {
               header,
               Row(
                 children: [
-                  Text("See more",style: Theme.of(context).textTheme.caption.copyWith(fontWeight: FontWeight.w500,color: AppColors.colorGreyDeeper),),
+                  Text(
+                   moreText,
+                    style: Theme.of(context).textTheme.caption.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.colorGreyDeeper),
+                  ),
                   Utils.horizontalSpacer(space: 8),
                   SvgPicture.asset(AppImages.ic_right_arrow,
                       color: AppColors.colorGreyDeeper)
