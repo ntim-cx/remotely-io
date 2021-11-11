@@ -6,7 +6,7 @@ class AppString {
       "We serve you with the best gadgets for your home workspace";
   static const browseShop = "Browse Shop";
   static const login = "Log In";
-
+  static const dot = "\u{2022}";
   // Login Text
   static const userWelcome = "HI FELLA";
   static const welcomeBack = "Welcome Back";

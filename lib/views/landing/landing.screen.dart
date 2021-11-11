@@ -19,7 +19,7 @@ class LandingScreen extends StatelessWidget {
               image: AssetImage(
                 AppImages.splash_background,
               ),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           child: Padding(
