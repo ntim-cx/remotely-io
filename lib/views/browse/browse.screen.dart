@@ -224,6 +224,10 @@ class BrowseScreen extends StatelessWidget {
             actionIcon(AppImages.ic_wishlist, () {})
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          child: SvgPicture.asset(AppImages.ic_cart),
+          backgroundColor: AppColors.colorMain, onPressed: () {  },
+        ),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 16 , vertical: 10),
           color: Colors.white,
