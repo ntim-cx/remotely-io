@@ -134,12 +134,17 @@ class BrowseScreen extends StatelessWidget {
           isVertical: false,
         ),
         Utils.verticalSpacer(space: 8),
-        CategoryItem(
-          isVertical: true,
-          featureImage: AppImages.categoryImageOne,
-          title: "Developer",
-          subTitle: "21 suggested items",
-        )
+        SingleChildScrollView(
+          child: Row(
+            children: [CategoryItem(
+              isVertical: true,
+              featureImage: AppImages.categoryImageOne,
+              title: "Developer",
+              subTitle: "21 suggested items",
+            )
+            ],
+          ),
+        ),
       ],
     );
     /* ListView(
